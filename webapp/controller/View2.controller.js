@@ -21,6 +21,7 @@ sap.ui.define([
         onSave: function(){
             MessageBox.confirm("Do you want to Save",{
                 onClose: function(status){
+                    // Change for testing
                     if(status === "OK"){
                         MessageToast.show("Your preference was saved 😊");
                     }else{
