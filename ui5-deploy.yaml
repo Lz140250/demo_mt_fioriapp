@@ -1,0 +1,27 @@
+specVersion: "4.0"
+metadata:
+  name: ui5project
+type: application
+framework:
+  name: SAPUI5
+  version: "1.129.2"
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: ""
+          url: http://122.162.240.164:8021
+          client: "800"
+        app:
+          name: ZZ1_MT_ZHE
+          description: my first fiori app
+          package: $tmp
+          transport: ""
+        exclude:
+          - /test/
